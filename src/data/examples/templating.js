@@ -6,21 +6,11 @@
 export const minimalTemplate = {
   vue2: `<template>
   <div>Hello World</div>
-</template>
-
-<script>
-export default {
-  name: 'HelloWorld'
-}
-</script>`,
+</template>`,
 
   vue3: `<template>
   <div>Hello World</div>
-</template>
-
-<script setup>
-// Vue 3 with Composition API
-</script>`,
+</template>`,
 
   react: `function Component() {
   return <div>Hello World</div>

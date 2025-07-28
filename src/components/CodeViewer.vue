@@ -126,6 +126,11 @@ watch(
       <div v-for="framework in frameworks" :key="framework.id" class="code-example">
         <div class="code-header">
           <h3 class="framework-name" :style="{ color: framework.color }">
+            <img 
+              :src="framework.logo" 
+              :alt="`${framework.name} logo`"
+              class="framework-name-logo"
+            />
             {{ framework.name }}
           </h3>
           <button
@@ -227,6 +232,15 @@ watch(
   margin: 0;
   font-size: 1.125rem;
   font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.framework-name-logo {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
 }
 
 .copy-button {
@@ -377,6 +391,12 @@ watch(
 
   .framework-name {
     font-size: 1rem;
+    gap: 0.375rem;
+  }
+
+  .framework-name-logo {
+    width: 1rem;
+    height: 1rem;
   }
 }
 </style>

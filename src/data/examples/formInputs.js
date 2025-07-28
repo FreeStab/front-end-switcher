@@ -171,7 +171,7 @@ export class InputComponent {
   />
   <p>Current value: {{this.username}}</p>
   <p>Length: {{this.username.length}}</p>
-</div>`
+</div>`,
       },
       {
         name: "component.js",
@@ -187,9 +187,9 @@ export default class InputComponent extends Component {
     this.username = event.target.value
     console.log('Input changed:', event.target.value)
   }
-}`
-      }
-    ]
+}`,
+      },
+    ],
   },
 
   solid: `import { createSignal } from 'solid-js'
@@ -572,7 +572,7 @@ export class CheckboxComponent {
     </label>
   {{/each}}
   <p>Selected: {{join ", " this.selectedOptions}}</p>
-</div>`
+</div>`,
       },
       {
         name: "component.js",
@@ -604,9 +604,9 @@ export default class CheckboxComponent extends Component {
       this.selectedOptions = [...this.selectedOptions, optionId]
     }
   }
-}`
-      }
-    ]
+}`,
+      },
+    ],
   },
 
   solid: `import { createSignal } from 'solid-js'
@@ -1096,7 +1096,7 @@ export class RadioComponent {
     </label>
   {{/each}}
   <p>Experience: {{this.selectedLevel}}</p>
-</div>`
+</div>`,
       },
       {
         name: "component.js",
@@ -1131,9 +1131,9 @@ export default class RadioComponent extends Component {
   selectLevel(levelId) {
     this.selectedLevel = levelId
   }
-}`
-      }
-    ]
+}`,
+      },
+    ],
   },
 
   solid: `import { createSignal } from 'solid-js'

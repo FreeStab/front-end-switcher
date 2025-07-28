@@ -16,7 +16,7 @@ const selectedFrameworksData = computed(() =>
 <template>
   <div class="app">
     <header class="header">
-      <h1 class="title">Frontend Framework Syntax Comparator</h1>
+      <h1 class="title">Frontend Component Syntaxs</h1>
       <FrameworkSelector
         :frameworks="frameworks"
         :selected="selectedFrameworks"

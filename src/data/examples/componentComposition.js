@@ -31,7 +31,7 @@ export default {
     }
   }
 }
-</script>`
+</script>`,
       },
       {
         name: "ChildComponent.vue",
@@ -60,9 +60,9 @@ export default {
     }
   }
 }
-</script>`
-      }
-    ]
+</script>`,
+      },
+    ],
   },
 
   vue3: {
@@ -86,7 +86,7 @@ import ChildComponent from './ChildComponent.vue'
 const pageTitle = ref('Hello World')
 const counter = ref(42)
 const isActive = ref(true)
-</script>`
+</script>`,
       },
       {
         name: "ChildComponent.vue",
@@ -113,9 +113,9 @@ defineProps({
     default: false
   }
 })
-</script>`
-      }
-    ]
+</script>`,
+      },
+    ],
   },
 
   react: {
@@ -140,7 +140,7 @@ function Parent() {
   )
 }
 
-export default Parent`
+export default Parent`,
       },
       {
         name: "ChildComponent.jsx",
@@ -154,7 +154,7 @@ export default Parent`
   )
 }
 
-export default ChildComponent`
+export default ChildComponent`,
       },
       {
         name: "ChildComponent.tsx",
@@ -174,9 +174,9 @@ function ChildComponent({ title, count = 0, isActive = false }: ChildProps) {
   )
 }
 
-export default ChildComponent`
-      }
-    ]
+export default ChildComponent`,
+      },
+    ],
   },
 
   svelte4: {
@@ -197,7 +197,7 @@ export default ChildComponent`
     count={counter}
     {isActive}
   />
-</div>`
+</div>`,
       },
       {
         name: "ChildComponent.svelte",
@@ -211,9 +211,9 @@ export default ChildComponent`
   <h1>{title}</h1>
   <p>Count: {count}</p>
   <p>Status: {isActive ? 'Active' : 'Inactive'}</p>
-</div>`
-      }
-    ]
+</div>`,
+      },
+    ],
   },
 
   svelte5: {
@@ -234,7 +234,7 @@ export default ChildComponent`
     count={counter}
     {isActive}
   />
-</div>`
+</div>`,
       },
       {
         name: "ChildComponent.svelte",
@@ -246,9 +246,9 @@ export default ChildComponent`
   <h1>{title}</h1>
   <p>Count: {count}</p>
   <p>Status: {isActive ? 'Active' : 'Inactive'}</p>
-</div>`
-      }
-    ]
+</div>`,
+      },
+    ],
   },
 
   angular: {
@@ -273,7 +273,7 @@ export class ParentComponent {
   pageTitle = 'Hello World'
   counter = 42
   isActive = true
-}`
+}`,
       },
       {
         name: "child.component.ts",
@@ -293,9 +293,9 @@ export class ChildComponent {
   @Input() title!: string
   @Input() count: number = 0
   @Input() isActive: boolean = false
-}`
-      }
-    ]
+}`,
+      },
+    ],
   },
 
   "angular-renaissance": {
@@ -320,7 +320,7 @@ export class ParentComponent {
   pageTitle = signal('Hello World')
   counter = signal(42)
   isActive = signal(true)
-}`
+}`,
       },
       {
         name: "child.component.ts",
@@ -340,9 +340,9 @@ export class ChildComponent {
   title = input.required<string>()
   count = input(0)
   isActive = input(false)
-}`
-      }
-    ]
+}`,
+      },
+    ],
   },
 
   ember: {
@@ -355,7 +355,7 @@ export class ChildComponent {
     @count={{this.counter}}
     @isActive={{this.isActive}}
   />
-</div>`
+</div>`,
       },
       {
         name: "parent.js",
@@ -366,7 +366,7 @@ export default class ParentComponent extends Component {
   @tracked pageTitle = 'Hello World'
   @tracked counter = 42
   @tracked isActive = true
-}`
+}`,
       },
       {
         name: "child.hbs",
@@ -374,7 +374,7 @@ export default class ParentComponent extends Component {
   <h1>{{@title}}</h1>
   <p>Count: {{@count}}</p>
   <p>Status: {{if @isActive "Active" "Inactive"}}</p>
-</div>`
+</div>`,
       },
       {
         name: "child.js",
@@ -393,9 +393,9 @@ export default class ChildComponent extends Component {
   get isActive() {
     return this.args.isActive ?? false
   }
-}`
-      }
-    ]
+}`,
+      },
+    ],
   },
 
   solid: {
@@ -420,7 +420,7 @@ function Parent() {
   )
 }
 
-export default Parent`
+export default Parent`,
       },
       {
         name: "ChildComponent.tsx",
@@ -443,9 +443,9 @@ function ChildComponent(props: ChildProps) {
   )
 }
 
-export default ChildComponent`
-      }
-    ]
+export default ChildComponent`,
+      },
+    ],
   },
 
   alpine: `<!-- Parent Component -->
@@ -504,7 +504,7 @@ export default {
     }
   }
 }
-</script>`
+</script>`,
       },
       {
         name: "ChildComponent.vue",
@@ -526,9 +526,9 @@ export default {
     }
   }
 }
-</script>`
-      }
-    ]
+</script>`,
+      },
+    ],
   },
 
   vue3: {
@@ -555,7 +555,7 @@ const handleIncrement = () => {
 const handleDecrement = () => {
   count.value--
 }
-</script>`
+</script>`,
       },
       {
         name: "ChildComponent.vue",
@@ -576,9 +576,9 @@ const increment = () => {
 const decrement = () => {
   emit('decrement')
 }
-</script>`
-      }
-    ]
+</script>`,
+      },
+    ],
   },
 
   react: {
@@ -610,7 +610,7 @@ function Parent() {
   )
 }
 
-export default Parent`
+export default Parent`,
       },
       {
         name: "ChildComponent.tsx",
@@ -628,9 +628,9 @@ function ChildComponent({ onIncrement, onDecrement }: ChildProps) {
   )
 }
 
-export default ChildComponent`
-      }
-    ]
+export default ChildComponent`,
+      },
+    ],
   },
 
   svelte4: {
@@ -657,7 +657,7 @@ export default ChildComponent`
     on:increment={handleIncrement}
     on:decrement={handleDecrement}
   />
-</div>`
+</div>`,
       },
       {
         name: "ChildComponent.svelte",
@@ -678,9 +678,9 @@ export default ChildComponent`
 <div>
   <button on:click={increment}>+</button>
   <button on:click={decrement}>-</button>
-</div>`
-      }
-    ]
+</div>`,
+      },
+    ],
   },
 
   svelte5: {
@@ -707,7 +707,7 @@ export default ChildComponent`
     onincrement={handleIncrement}
     ondecrement={handleDecrement}
   />
-</div>`
+</div>`,
       },
       {
         name: "ChildComponent.svelte",
@@ -718,9 +718,9 @@ export default ChildComponent`
 <div>
   <button onclick={onincrement}>+</button>
   <button onclick={ondecrement}>-</button>
-</div>`
-      }
-    ]
+</div>`,
+      },
+    ],
   },
 
   angular: `// Parent Component
@@ -968,7 +968,7 @@ import CardComponent from './CardComponent.vue'
 export default {
   components: { CardComponent }
 }
-</script>`
+</script>`,
       },
       {
         name: "CardComponent.vue",
@@ -986,9 +986,9 @@ export default {
   border-radius: 8px;
   padding: 16px;
 }
-</style>`
-      }
-    ]
+</style>`,
+      },
+    ],
   },
 
   vue3: {
@@ -1007,7 +1007,7 @@ export default {
 
 <script setup>
 import CardComponent from './CardComponent.vue'
-</script>`
+</script>`,
       },
       {
         name: "CardComponent.vue",
@@ -1025,9 +1025,9 @@ import CardComponent from './CardComponent.vue'
   border-radius: 8px;
   padding: 16px;
 }
-</style>`
-      }
-    ]
+</style>`,
+      },
+    ],
   },
 
   react: {
@@ -1048,7 +1048,7 @@ function Parent() {
   )
 }
 
-export default Parent`
+export default Parent`,
       },
       {
         name: "CardComponent.tsx",
@@ -1069,7 +1069,7 @@ function CardComponent({ children }: CardProps) {
   )
 }
 
-export default CardComponent`
+export default CardComponent`,
       },
       {
         name: "Card.css",
@@ -1077,9 +1077,9 @@ export default CardComponent`
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 16px;
-}`
-      }
-    ]
+}`,
+      },
+    ],
   },
 
   svelte4: {
@@ -1096,7 +1096,7 @@ export default CardComponent`
     <p>This is the card content</p>
     <button>Action Button</button>
   </CardComponent>
-</div>`
+</div>`,
       },
       {
         name: "CardComponent.svelte",
@@ -1112,9 +1112,9 @@ export default CardComponent`
     border-radius: 8px;
     padding: 16px;
   }
-</style>`
-      }
-    ]
+</style>`,
+      },
+    ],
   },
 
   svelte5: {
@@ -1131,7 +1131,7 @@ export default CardComponent`
     <p>This is the card content</p>
     <button>Action Button</button>
   </CardComponent>
-</div>`
+</div>`,
       },
       {
         name: "CardComponent.svelte",
@@ -1151,9 +1151,9 @@ export default CardComponent`
     border-radius: 8px;
     padding: 16px;
   }
-</style>`
-      }
-    ]
+</style>`,
+      },
+    ],
   },
 
   angular: `// Parent Component
@@ -1328,7 +1328,7 @@ import CardComponent from './CardComponent.vue'
 export default {
   components: { CardComponent }
 }
-</script>`
+</script>`,
       },
       {
         name: "CardComponent.vue",
@@ -1350,9 +1350,9 @@ export default {
   border-radius: 8px;
   padding: 16px;
 }
-</style>`
-      }
-    ]
+</style>`,
+      },
+    ],
   },
 
   vue3: {
@@ -1373,7 +1373,7 @@ export default {
 
 <script setup>
 import CardComponent from './CardComponent.vue'
-</script>`
+</script>`,
       },
       {
         name: "CardComponent.vue",
@@ -1395,9 +1395,9 @@ import CardComponent from './CardComponent.vue'
   border-radius: 8px;
   padding: 16px;
 }
-</style>`
-      }
-    ]
+</style>`,
+      },
+    ],
   },
 
   react: `// Parent Component
@@ -1690,7 +1690,7 @@ export default {
     }
   }
 }
-</script>`
+</script>`,
       },
       {
         name: "ParentComponent.vue",
@@ -1706,7 +1706,7 @@ import ChildComponent from './ChildComponent.vue'
 export default {
   components: { ChildComponent }
 }
-</script>`
+</script>`,
       },
       {
         name: "ChildComponent.vue",
@@ -1721,9 +1721,9 @@ export default {
 export default {
   inject: ['theme', 'user']
 }
-</script>`
-      }
-    ]
+</script>`,
+      },
+    ],
   },
 
   vue3: `<!-- App.vue (Root) -->

@@ -41,6 +41,11 @@ const isSelected = (frameworkId) => {
         ]"
         :style="{ '--framework-color': framework.color }"
       >
+        <img 
+          :src="framework.logo" 
+          :alt="`${framework.name} logo`"
+          class="framework-logo"
+        />
         {{ framework.name }}
       </button>
     </div>
@@ -70,6 +75,15 @@ const isSelected = (frameworkId) => {
   transition: all 0.2s ease;
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.framework-logo {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
 }
 
 .framework-button:hover {
@@ -79,18 +93,24 @@ const isSelected = (frameworkId) => {
 
 .framework-button.selected {
   border-color: var(--framework-color);
-  background-color: var(--framework-color);
-  color: white;
+  background-color: color-mix(in srgb, var(--framework-color) 15%, white);
+  color: var(--framework-color);
 }
 
 .framework-button.selected:hover {
-  background-color: color-mix(in srgb, var(--framework-color) 90%, black);
+  background-color: color-mix(in srgb, var(--framework-color) 25%, white);
 }
 
 @media (max-width: 768px) {
   .framework-button {
     font-size: 0.75rem;
     padding: 0.375rem 0.75rem;
+    gap: 0.375rem;
+  }
+  
+  .framework-logo {
+    width: 0.875rem;
+    height: 0.875rem;
   }
 }
 </style>
