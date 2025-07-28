@@ -45,8 +45,8 @@ const selectExample = (exampleId) => {
 <style scoped>
 .sidebar {
   width: 280px;
-  background: #ffffff;
-  border-right: 1px solid #e5e7eb;
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--border-color);
   padding: 1.5rem;
   overflow-y: auto;
   height: calc(100vh - 120px);
@@ -63,7 +63,7 @@ const selectExample = (exampleId) => {
 .category-title {
   font-size: 1rem;
   font-weight: 600;
-  color: #1f2937;
+  color: var(--text-color);
   margin: 0 0 0.75rem 0;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -89,15 +89,15 @@ const selectExample = (exampleId) => {
   border: none;
   border-radius: 0.375rem;
   background: transparent;
-  color: #6b7280;
+  color: var(--text-secondary);
   font-size: 0.875rem;
   cursor: pointer;
   transition: all 0.15s ease;
 }
 
 .example-button:hover {
-  background: #f3f4f6;
-  color: #374151;
+  background: var(--hover-bg);
+  color: var(--text-color);
 }
 
 .example-button.selected {
@@ -115,7 +115,7 @@ const selectExample = (exampleId) => {
     height: auto;
     position: static;
     border-right: none;
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid var(--border-color);
     padding: 1rem;
   }
   

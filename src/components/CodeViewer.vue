@@ -183,6 +183,7 @@ watch(
   flex: 1;
   padding: 1.5rem;
   overflow-y: auto;
+  background: var(--bg-color);
 }
 
 .no-content {
@@ -192,13 +193,13 @@ watch(
   justify-content: center;
   height: 100%;
   text-align: center;
-  color: #6b7280;
+  color: var(--text-muted);
 }
 
 .no-content h2 {
   margin: 0 0 0.5rem 0;
   font-size: 1.5rem;
-  color: #374151;
+  color: var(--text-secondary);
 }
 
 .no-content p {
@@ -213,8 +214,8 @@ watch(
 }
 
 .code-example {
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
   border-radius: 0.5rem;
   overflow: hidden;
 }
@@ -224,8 +225,8 @@ watch(
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background: #f9fafb;
-  border-bottom: 1px solid #e5e7eb;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .framework-name {
@@ -235,6 +236,7 @@ watch(
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  color: var(--text-color);
 }
 
 .framework-name-logo {
@@ -247,15 +249,15 @@ watch(
   padding: 0.5rem;
   border: none;
   background: transparent;
-  color: #6b7280;
+  color: var(--text-secondary);
   cursor: pointer;
   border-radius: 0.25rem;
   transition: all 0.15s ease;
 }
 
 .copy-button:hover {
-  background: #e5e7eb;
-  color: #374151;
+  background: var(--hover-bg);
+  color: var(--text-color);
 }
 
 .code-container {
@@ -264,8 +266,8 @@ watch(
 
 .file-tabs {
   display: flex;
-  background: #f1f5f9;
-  border-bottom: 1px solid #e5e7eb;
+  background: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border-color);
   overflow-x: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -279,7 +281,7 @@ watch(
   padding: 0.5rem 1rem;
   border: none;
   background: transparent;
-  color: #6b7280;
+  color: var(--text-secondary);
   cursor: pointer;
   font-size: 0.875rem;
   font-family: 'Fira Code', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace;
@@ -289,13 +291,13 @@ watch(
 }
 
 .file-tab:hover {
-  background: #e2e8f0;
-  color: #374151;
+  background: var(--hover-bg);
+  color: var(--text-color);
 }
 
 .file-tab.active {
-  background: #ffffff;
-  color: #1f2937;
+  background: var(--bg-color);
+  color: var(--text-color);
   border-bottom-color: #3b82f6;
   font-weight: 500;
 }
@@ -364,7 +366,7 @@ watch(
 .no-code {
   padding: 1.5rem;
   text-align: center;
-  color: #6b7280;
+  color: var(--text-muted);
   font-style: italic;
 }
 

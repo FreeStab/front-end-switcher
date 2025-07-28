@@ -65,10 +65,10 @@ const isSelected = (frameworkId) => {
 
 .framework-button {
   padding: 0.5rem 1rem;
-  border: 2px solid #e5e7eb;
+  border: 2px solid var(--border-color);
   border-radius: 0.5rem;
-  background: #ffffff;
-  color: #374151;
+  background: var(--bg-color);
+  color: var(--text-color);
   font-size: 0.875rem;
   font-weight: 500;
   cursor: pointer;
@@ -88,17 +88,17 @@ const isSelected = (frameworkId) => {
 
 .framework-button:hover {
   border-color: var(--framework-color);
-  background-color: color-mix(in srgb, var(--framework-color) 10%, white);
+  background-color: color-mix(in srgb, var(--framework-color) 10%, var(--bg-color));
 }
 
 .framework-button.selected {
   border-color: var(--framework-color);
-  background-color: color-mix(in srgb, var(--framework-color) 15%, white);
+  background-color: color-mix(in srgb, var(--framework-color) 15%, var(--bg-color));
   color: var(--framework-color);
 }
 
 .framework-button.selected:hover {
-  background-color: color-mix(in srgb, var(--framework-color) 25%, white);
+  background-color: color-mix(in srgb, var(--framework-color) 25%, var(--bg-color));
 }
 
 @media (max-width: 768px) {

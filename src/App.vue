@@ -3,6 +3,7 @@ import { ref, computed } from "vue";
 import FrameworkSelector from "./components/FrameworkSelector.vue";
 import Sidebar from "./components/Sidebar.vue";
 import CodeViewer from "./components/CodeViewer.vue";
+import ThemeToggle from "./components/ThemeToggle.vue";
 import { frameworks, categories } from "./data/index.js";
 
 const selectedFrameworks = ref(["vue3", "react", "svelte5"]);
@@ -16,7 +17,10 @@ const selectedFrameworksData = computed(() =>
 <template>
   <div class="app">
     <header class="header">
-      <h1 class="title">Frontend Component Syntaxs</h1>
+      <div class="header-content">
+        <h1 class="title">Frontend Component Syntaxs</h1>
+        <ThemeToggle />
+      </div>
       <FrameworkSelector
         :frameworks="frameworks"
         :selected="selectedFrameworks"
@@ -41,28 +45,36 @@ const selectedFrameworksData = computed(() =>
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: var(--bg-color);
 }
 
 .header {
-  background: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--border-color);
   padding: 1rem 2rem;
   position: sticky;
   top: 0;
   z-index: 10;
 }
 
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
 .title {
-  margin: 0 0 1rem 0;
+  margin: 0;
   font-size: 1.5rem;
   font-weight: 600;
-  color: #1f2937;
+  color: var(--text-color);
 }
 
 .main {
   flex: 1;
   display: flex;
-  background: #f9fafb;
+  background: var(--bg-secondary);
 }
 
 @media (max-width: 768px) {
@@ -72,6 +84,12 @@ const selectedFrameworksData = computed(() =>
 
   .header {
     padding: 1rem;
+  }
+
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
   }
 
   .title {
