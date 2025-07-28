@@ -66,6 +66,49 @@ A modern web application built with Vue 3 and Vite that allows developers to com
    npm run build
    ```
 
+## 🌐 GitHub Pages Deployment
+
+### Automatic Deployment (Recommended)
+
+This project is configured for automatic deployment to GitHub Pages using GitHub Actions:
+
+1. **Push to main branch**: The app automatically deploys when you push to the `main` branch
+2. **GitHub Actions**: Uses the workflow in `.github/workflows/deploy.yml`
+3. **Live URL**: Your app will be available at `https://<USERNAME>.github.io/front-end-switcher/`
+
+### Manual Deployment
+
+You can also deploy manually using these methods:
+
+#### Method 1: Using npm script
+```bash
+npm run deploy
+```
+
+#### Method 2: Using the deploy script
+```bash
+./deploy.sh
+```
+
+### Setup Instructions
+
+1. **Fork or clone** this repository to your GitHub account
+2. **Enable GitHub Pages** in your repository settings:
+   - Go to Settings → Pages
+   - Select "Deploy from a branch"
+   - Choose "gh-pages" branch
+   - Click Save
+3. **Push to main branch** or run manual deployment
+4. **Access your app** at `https://<USERNAME>.github.io/front-end-switcher/`
+
+### Configuration
+
+The deployment is configured in:
+- `vite.config.js`: Sets the correct base path for GitHub Pages
+- `.github/workflows/deploy.yml`: GitHub Actions workflow
+- `deploy.sh`: Manual deployment script
+- `package.json`: Deploy script and gh-pages dependency
+
 ## 🎯 Usage
 
 1. **Select Frameworks**: Use the horizontal framework selector at the top to choose which frameworks you want to compare (minimum 1, maximum all 10)
