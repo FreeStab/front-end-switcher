@@ -1,37 +1,26 @@
 <script setup>
 const props = defineProps({
   categories: Array,
-  selected: String
-})
+  selected: String,
+});
 
-const emit = defineEmits(['update:selected'])
+const emit = defineEmits(["update:selected"]);
 
 const selectExample = (exampleId) => {
-  emit('update:selected', exampleId)
-}
+  emit("update:selected", exampleId);
+};
 </script>
 
 <template>
   <aside class="sidebar">
     <nav class="navigation">
-      <div
-        v-for="category in categories"
-        :key="category.id"
-        class="category"
-      >
+      <div v-for="category in categories" :key="category.id" class="category">
         <h3 class="category-title">{{ category.name }}</h3>
         <ul class="category-items">
-          <li
-            v-for="item in category.items"
-            :key="item.id"
-            class="category-item"
-          >
+          <li v-for="item in category.items" :key="item.id" class="category-item">
             <button
               @click="selectExample(item.id)"
-              :class="[
-                'example-button',
-                { 'selected': selected === item.id }
-              ]"
+              :class="['example-button', { selected: selected === item.id }]"
             >
               {{ item.name }}
             </button>
@@ -101,12 +90,12 @@ const selectExample = (exampleId) => {
 }
 
 .example-button.selected {
-  background: #3b82f6;
+  background: var(--primary-color);
   color: white;
 }
 
 .example-button.selected:hover {
-  background: #2563eb;
+  background: var(--primary-color-darker);
 }
 
 @media (max-width: 768px) {
@@ -118,17 +107,17 @@ const selectExample = (exampleId) => {
     border-bottom: 1px solid var(--border-color);
     padding: 1rem;
   }
-  
+
   .navigation {
     gap: 1rem;
   }
-  
+
   .category-items {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 0.5rem;
   }
-  
+
   .example-button {
     width: auto;
     flex: 1;

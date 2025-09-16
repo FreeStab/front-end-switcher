@@ -34,8 +34,6 @@ export default {
     placeholder="Enter your username"
   />
   <p>Current value: {{ username }}</p>
-    
-  </div>
 </template>
 
 <script setup>

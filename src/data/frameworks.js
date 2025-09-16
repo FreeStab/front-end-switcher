@@ -42,7 +42,7 @@ export const frameworks = [
     id: "angular-renaissance",
     name: "Angular Renaissance",
     color: "#DD0031",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg",
   },
   {
     id: "ember",

@@ -4,6 +4,8 @@
   font-weight: 400;
 
   /* Light theme variables */
+  --primary-color: #eb963a;
+  --primary-color-darker: #d77a2b;
   --text-color: #213547;
   --text-secondary: #64748b;
   --text-muted: #94a3b8;
@@ -127,7 +129,7 @@ pre {
 
 /* Responsive design utilities */
 @media (prefers-color-scheme: dark) {
-  :root:not(.dark-theme) {
+  :root:is(.dark-theme) {
     --text-color: #f1f5f9;
     --text-secondary: #94a3b8;
     --text-muted: #64748b;

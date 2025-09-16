@@ -723,8 +723,11 @@ export default ChildComponent`,
     ],
   },
 
-  angular: `// Parent Component
-import { Component } from '@angular/core'
+  angular: {
+    files: [
+      {
+        name: "parent.component.ts",
+        content: `import { Component } from '@angular/core'
 
 @Component({
   selector: 'app-parent',
@@ -748,17 +751,18 @@ export class ParentComponent {
   handleDecrement() {
     this.count--
   }
-}
-
-// Child Component
-import { Component, EventEmitter, Output } from '@angular/core'
+}`,
+      },
+      {
+        name: "child.component.ts",
+        content: `import { Component, EventEmitter, Output } from '@angular/core'
 
 @Component({
   selector: 'app-child',
   template: \`
     <div>
-      <button (click)="increment()">+</button>
-      <button (click)="decrement()">-</button>
+      <button (click)="onIncrement()">+</button>
+      <button (click)="onDecrement()">-</button>
     </div>
   \`
 })
@@ -774,9 +778,15 @@ export class ChildComponent {
     this.decrement.emit()
   }
 }`,
+      },
+    ],
+  },
 
-  "angular-renaissance": `// Parent Component
-import { Component, signal } from '@angular/core'
+  "angular-renaissance": {
+    files: [
+      {
+        name: "parent.component.ts",
+        content: `import { Component, signal } from '@angular/core'
 
 @Component({
   selector: 'app-parent',
@@ -800,10 +810,11 @@ export class ParentComponent {
   handleDecrement() {
     this.count.update(value => value - 1)
   }
-}
-
-// Child Component
-import { Component, output } from '@angular/core'
+}`,
+      },
+      {
+        name: "child.component.ts",
+        content: `import { Component, output } from '@angular/core'
 
 @Component({
   selector: 'app-child',
@@ -826,18 +837,25 @@ export class ChildComponent {
     this.decrement.emit()
   }
 }`,
+      },
+    ],
+  },
 
-  ember: `{{!-- Parent Component Template --}}
-<div>
+  ember: {
+    files: [
+      {
+        name: "parent.hbs",
+        content: `<div>
   <p>Count: {{this.count}}</p>
   <ChildComponent 
     @onIncrement={{this.handleIncrement}}
     @onDecrement={{this.handleDecrement}}
   />
-</div>
-
-// Parent Component Class
-import Component from '@glimmer/component'
+</div>`,
+      },
+      {
+        name: "parent.js",
+        content: `import Component from '@glimmer/component'
 import { tracked } from '@glimmer/tracking'
 import { action } from '@ember/object'
 
@@ -853,16 +871,18 @@ export default class ParentComponent extends Component {
   handleDecrement() {
     this.count--
   }
-}
-
-{{!-- Child Component Template --}}
-<div>
+}`,
+      },
+      {
+        name: "child.hbs",
+        content: `<div>
   <button {{on "click" this.increment}}>+</button>
   <button {{on "click" this.decrement}}>-</button>
-</div>
-
-// Child Component Class
-import Component from '@glimmer/component'
+</div>`,
+      },
+      {
+        name: "child.js",
+        content: `import Component from '@glimmer/component'
 import { action } from '@ember/object'
 
 export default class ChildComponent extends Component {
@@ -876,9 +896,15 @@ export default class ChildComponent extends Component {
     this.args.onDecrement?.()
   }
 }`,
+      },
+    ],
+  },
 
-  solid: `// Parent Component
-import { createSignal } from 'solid-js'
+  solid: {
+    files: [
+      {
+        name: "Parent.jsx",
+        content: `import { createSignal } from 'solid-js'
 import ChildComponent from './ChildComponent'
 
 function Parent() {
@@ -903,8 +929,11 @@ function Parent() {
   )
 }
 
-// Child Component
-interface ChildProps {
+export default Parent`,
+      },
+      {
+        name: "ChildComponent.tsx",
+        content: `interface ChildProps {
   onIncrement: () => void
   onDecrement: () => void
 }
@@ -916,7 +945,12 @@ function ChildComponent(props: ChildProps) {
       <button onClick={props.onDecrement}>-</button>
     </div>
   )
-}`,
+}
+
+export default ChildComponent`,
+      },
+    ],
+  },
 
   alpine: `<div x-data="{
   count: 0,
@@ -1235,21 +1269,28 @@ import { Component } from '@angular/core'
 })
 export class CardComponent {}`,
 
-  ember: `{{!-- Parent Component Template --}}
-<div>
+  ember: {
+    files: [
+      {
+        name: "parent.hbs",
+        content: `<div>
   <CardComponent>
     <h2>Card Title</h2>
     <p>This is the card content</p>
     <button>Action Button</button>
   </CardComponent>
-</div>
-
-{{!-- Card Component Template --}}
-<div class="card">
+</div>`,
+      },
+      {
+        name: "card-component.hbs",
+        content: `<div class="card">
   <div class="card-body">
     {{yield}}
   </div>
 </div>`,
+      },
+    ],
+  },
 
   solid: `// Parent Component
 import CardComponent from './CardComponent'

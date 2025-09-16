@@ -86,12 +86,6 @@ const selectedFrameworksData = computed(() =>
     padding: 1rem;
   }
 
-  .header-content {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: flex-start;
-  }
-
   .title {
     font-size: 1.25rem;
   }

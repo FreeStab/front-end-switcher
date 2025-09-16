@@ -38,19 +38,24 @@ const activeFileTabs = ref({});
 
 // Helper to check if content is multi-file
 const isMultiFile = (content) => {
-  return content && typeof content === 'object' && content.files && Array.isArray(content.files);
+  return (
+    content &&
+    typeof content === "object" &&
+    content.files &&
+    Array.isArray(content.files)
+  );
 };
 
 // Get current content for display (either string or current file from multi-file)
 const getCurrentContent = (frameworkId) => {
   const content = currentExample.value[frameworkId];
   if (!content) return null;
-  
+
   if (isMultiFile(content)) {
     const activeTab = activeFileTabs.value[frameworkId] || 0;
-    return content.files[activeTab]?.content || '';
+    return content.files[activeTab]?.content || "";
   }
-  
+
   return content;
 };
 
@@ -69,9 +74,13 @@ const setActiveFileTab = (frameworkId, fileIndex) => {
 };
 
 // Reset active tabs when example changes
-watch(() => props.example, () => {
-  activeFileTabs.value = {};
-}, { immediate: true });
+watch(
+  () => props.example,
+  () => {
+    activeFileTabs.value = {};
+  },
+  { immediate: true }
+);
 
 const copyToClipboard = async (frameworkId) => {
   try {
@@ -126,8 +135,8 @@ watch(
       <div v-for="framework in frameworks" :key="framework.id" class="code-example">
         <div class="code-header">
           <h3 class="framework-name" :style="{ color: framework.color }">
-            <img 
-              :src="framework.logo" 
+            <img
+              :src="framework.logo"
               :alt="`${framework.name} logo`"
               class="framework-name-logo"
             />
@@ -159,7 +168,10 @@ watch(
             v-for="(file, index) in getFiles(framework.id)"
             :key="index"
             @click="setActiveFileTab(framework.id, index)"
-            :class="['file-tab', { active: (activeFileTabs[framework.id] || 0) === index }]"
+            :class="[
+              'file-tab',
+              { active: (activeFileTabs[framework.id] || 0) === index },
+            ]"
           >
             {{ file.name }}
           </button>
@@ -170,7 +182,7 @@ watch(
             <code :class="`language-${getLanguageForFramework(framework.id)}`">{{ getCurrentContent(framework.id) }}</code>
           </pre>
           <div v-else class="no-code">
-            <p>Code example not available for {{ framework.name }}</p>
+            <p>Code example not yet available for {{ framework.name }}</p>
           </div>
         </div>
       </div>
@@ -284,7 +296,7 @@ watch(
   color: var(--text-secondary);
   cursor: pointer;
   font-size: 0.875rem;
-  font-family: 'Fira Code', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace;
+  font-family: "Fira Code", "Monaco", "Cascadia Code", "Roboto Mono", monospace;
   white-space: nowrap;
   border-bottom: 2px solid transparent;
   transition: all 0.15s ease;
@@ -298,14 +310,14 @@ watch(
 .file-tab.active {
   background: var(--bg-color);
   color: var(--text-color);
-  border-bottom-color: #3b82f6;
+  border-bottom-color: var(--primary-color);
   font-weight: 500;
 }
 
 .code-block {
   margin: 0;
-  padding: 1.5rem;
-  background: #0d1117;
+  padding-inline: 1.5rem;
+  background: #232c38;
   font-family: "Fira Code", "Monaco", "Cascadia Code", "Roboto Mono", monospace;
   font-size: 0.875rem;
   line-height: 1.6;
@@ -327,7 +339,6 @@ watch(
 
 /* Custom syntax highlighting enhancements */
 .code-block .hljs {
-  background: transparent !important;
   color: #e6edf3;
 }
 

@@ -404,8 +404,7 @@ export function handleError(error) {
   <slot />
 {/if}`,
 
-    angular: `// Angular - Global Error Handler
-import { Injectable, ErrorHandler } from '@angular/core'
+    angular: `import { Injectable, ErrorHandler } from '@angular/core'
 
 @Injectable()
 export class GlobalErrorHandler implements ErrorHandler {
@@ -440,8 +439,7 @@ export class ErrorBoundaryService {
   }
 }`,
 
-    solid: `// Solid.js - Error Boundary
-import { ErrorBoundary, createSignal } from 'solid-js'
+    solid: `import { ErrorBoundary, createSignal } from 'solid-js'
 
 function MyErrorBoundary(props) {
   const [error, setError] = createSignal()
@@ -466,8 +464,7 @@ function MyErrorBoundary(props) {
   <MyComponent />
 </MyErrorBoundary>`,
 
-    alpine: `<!-- Alpine.js - Error Handling -->
-<div x-data="{
+    alpine: `<div x-data="{
   hasError: false,
   errorMessage: '',
   handleError(error) {
@@ -501,14 +498,7 @@ x-init="
     vue3: `<template>
   <div>
     <!-- Skeleton Loading -->
-    <div v-if="loading" class="skeleton-container">
-      <div class="skeleton-item" v-for="n in 3" :key="n">
-        <div class="skeleton-avatar"></div>
-        <div class="skeleton-content">
-          <div class="skeleton-line skeleton-line-title"></div>
-          <div class="skeleton-line skeleton-line-text"></div>
-        </div>
-      </div>
+    <div v-if="loading" class="loader">
     </div>
 
     <!-- Content -->
@@ -558,8 +548,7 @@ const retry = () => fetchData()
 onMounted(() => fetchData())
 </script>`,
 
-    react: `// React - Loading States with Suspense
-import { useState, useEffect, Suspense } from 'react'
+    react: `import { useState, useEffect, Suspense } from 'react'
 
 function LoadingSkeleton() {
   return (
