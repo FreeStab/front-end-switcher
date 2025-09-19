@@ -1,6 +1,6 @@
 # Frontend Framework Syntax Comparator
 
-A modern web application built with Vue 3 and Vite that allows developers to compare syntax across multiple frontend frameworks side by side. Inspired by [component-party.dev](https://component-party.dev/).
+A modern web application built with Vue 3 and Vite that allows developers to compare syntax across multiple frontend frameworks side by side.
 
 ## 🚀 Features
 
@@ -81,11 +81,13 @@ This project is configured for automatic deployment to GitHub Pages using GitHub
 You can also deploy manually using these methods:
 
 #### Method 1: Using npm script
+
 ```bash
 npm run deploy
 ```
 
 #### Method 2: Using the deploy script
+
 ```bash
 ./deploy.sh
 ```
@@ -104,6 +106,7 @@ npm run deploy
 ### Configuration
 
 The deployment is configured in:
+
 - `vite.config.js`: Sets the correct base path for GitHub Pages
 - `.github/workflows/deploy.yml`: GitHub Actions workflow
 - `deploy.sh`: Manual deployment script
@@ -171,13 +174,11 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 🙏 Acknowledgments
 
-- Inspired by [component-party.dev](https://component-party.dev/)
 - Framework documentation and official examples
 - Vue.js, React, Svelte, Angular, and other framework communities
 
 ## 🔗 Related Projects
 
-- [component-party.dev](https://component-party.dev/) - The original inspiration
 - [Vue.js](https://vuejs.org/)
 - [React](https://reactjs.org/)
 - [Svelte](https://svelte.dev/)
