@@ -12,7 +12,7 @@ import {
   declareState,
   updateState,
   computedState,
-} from "./examples/reactivity.js";
+} from "./examples/reactivity/index.js";
 
 import {
   minimalTemplate,
@@ -21,9 +21,9 @@ import {
   eventClick,
   domRef,
   conditional,
-} from "./examples/templating.js";
+} from "./examples/templating/index.js";
 
-import { onMount, onUnmount } from "./examples/lifecycle.js";
+import { onMount, onUnmount } from "./examples/lifecycle/index.js";
 
 import {
   props,
@@ -31,16 +31,16 @@ import {
   slot,
   slotFallback,
   context,
-} from "./examples/componentComposition.js";
+} from "./examples/componentComposition/index.js";
 
-import { asyncErrorHandling } from "./examples/asyncErrorHandling.js";
+import { asyncErrorHandling } from "./examples/asyncErrorHandling/index.js";
 
 import {
   inputText,
   checkbox,
   radio,
   selectDropdown,
-} from "./examples/formInputs.js";
+} from "./examples/formInputs/index.js";
 
 /**
  * Unified code examples object

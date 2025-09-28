@@ -1,0 +1,15 @@
+<div
+  x-data="{ 
+  items: [
+    { id: 1, name: 'Apple' },
+    { id: 2, name: 'Banana' },
+    { id: 3, name: 'Orange' }
+  ]
+}"
+>
+  <ul>
+    <template x-for="item in items" :key="item.id">
+      <li x-text="item.name"></li>
+    </template>
+  </ul>
+</div>

@@ -1,0 +1,12 @@
+<div>
+  <label for="username">Username:</label>
+  <Input
+    @id="username"
+    @value={{this.username}}
+    @type="text"
+    @placeholder="Enter your username"
+    @input={{this.handleInput}}
+  />
+  <p>Current value: {{this.username}}</p>
+  <p>Length: {{this.username.length}}</p>
+</div>

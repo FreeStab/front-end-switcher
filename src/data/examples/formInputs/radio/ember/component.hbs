@@ -1,0 +1,31 @@
+<div>
+  <h3>Programming Language</h3>
+  {{#each this.languages as |language|}}
+    <label>
+      <Input
+        @type="radio"
+        @name="language"
+        @value={{language.id}}
+        @checked={{eq this.selectedLanguage language.id}}
+        {{on "change" (fn this.selectLanguage language.id)}}
+      />
+      {{language.label}}
+    </label>
+  {{/each}}
+  <p>Selected: {{this.selectedLanguage}}</p>
+
+  <h3>Experience Level</h3>
+  {{#each this.experienceLevels as |level|}}
+    <label>
+      <Input
+        @type="radio"
+        @name="experience"
+        @value={{level.id}}
+        @checked={{eq this.selectedLevel level.id}}
+        {{on "change" (fn this.selectLevel level.id)}}
+      />
+      {{level.label}}
+    </label>
+  {{/each}}
+  <p>Experience: {{this.selectedLevel}}</p>
+</div>

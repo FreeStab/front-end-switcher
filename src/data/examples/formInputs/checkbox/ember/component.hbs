@@ -1,0 +1,25 @@
+<div>
+  <h3>Single Checkbox</h3>
+  <label>
+    <Input
+      @type="checkbox"
+      @checked={{this.isChecked}}
+      {{on "change" this.toggleChecked}}
+    />
+    Accept terms and conditions
+  </label>
+  <p>Accepted: {{this.isChecked}}</p>
+
+  <h3>Multiple Checkboxes</h3>
+  {{#each this.options as |option|}}
+    <label>
+      <Input
+        @type="checkbox"
+        @checked={{includes this.selectedOptions option.id}}
+        {{on "change" (fn this.toggleOption option.id)}}
+      />
+      {{option.label}}
+    </label>
+  {{/each}}
+  <p>Selected: {{join ", " this.selectedOptions}}</p>
+</div>

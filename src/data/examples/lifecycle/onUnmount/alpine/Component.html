@@ -1,0 +1,6 @@
+<div
+  x-data="{}"
+  x-init="$nextTick(() => { $el._x_cleanups = $el._x_cleanups || []; $el._x_cleanups.push(() => { console.log('Component will unmount') }) })"
+>
+  <div>Component will cleanup on unmount</div>
+</div>

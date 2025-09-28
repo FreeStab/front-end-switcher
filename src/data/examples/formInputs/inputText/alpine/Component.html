@@ -1,0 +1,12 @@
+<div x-data="{ username: '' }">
+  <label for="username">Username:</label>
+  <input
+    id="username"
+    x-model="username"
+    type="text"
+    placeholder="Enter your username"
+    @input="console.log('Input changed:', $event.target.value)"
+  />
+  <p>Current value: <span x-text="username"></span></p>
+  <p>Length: <span x-text="username.length"></span></p>
+</div>

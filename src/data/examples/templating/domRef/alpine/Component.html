@@ -1,0 +1,7 @@
+<div x-data="{ inputValue: '' }">
+  <input x-ref="input" type="text" placeholder="Focus me!" />
+  <button @click="$refs.input.focus(); inputValue = $refs.input.value">
+    Focus Input
+  </button>
+  <p>Input value: <span x-text="inputValue"></span></p>
+</div>

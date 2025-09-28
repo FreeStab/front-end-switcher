@@ -1,0 +1,28 @@
+<div
+  x-data="{
+  data: null,
+  loading: false,
+  error: null,
+  async fetchData() {
+    this.loading = true
+    this.error = null
+    
+    try {
+      const response = await fetch('/api/data')
+      if (!response.ok) throw new Error('Failed to fetch')
+      this.data = await response.json()
+    } catch (err) {
+      this.error = err.message
+    } finally {
+      this.loading = false
+    }
+  }
+}"
+>
+  <button @click="fetchData()" :disabled="loading">
+    <span x-text="loading ? 'Loading...' : 'Fetch Data'"></span>
+  </button>
+
+  <div x-show="error" class="error" x-text="error"></div>
+  <div x-show="data" x-text="data?.message"></div>
+</div>

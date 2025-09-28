@@ -1,0 +1,14 @@
+<div x-data="{ isActive: true, styles: { color: 'blue', fontSize: '16px' } }">
+  <div class="container">
+    <p :class="{ active: isActive }" :style="styles">Styled content</p>
+  </div>
+</div>
+
+<style>
+  .container {
+    padding: 20px;
+  }
+  .active {
+    font-weight: bold;
+  }
+</style>

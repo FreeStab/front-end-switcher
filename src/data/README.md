@@ -13,7 +13,13 @@ src/data/
     ├── reactivity.js    # State management examples
     ├── templating.js    # Template and UI examples
     ├── lifecycle.js     # Component lifecycle examples
-    └── componentComposition.js  # Component communication examples
+    └── componentComposition/
+        ├── index.js               # Component communication examples
+        ├── emitToParent/          # Parent-child communication examples
+        ├── props/                 # Props passing examples
+        ├── slot/                  # Slot/children examples
+        ├── slotFallback/          # Slot fallback examples
+        └── context/               # Context/dependency injection examples
 ```
 
 ## Files Description

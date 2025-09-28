@@ -1,0 +1,42 @@
+<div
+  x-data="{
+  hasError: false,
+  errorMessage: '',
+  handleError(error) {
+    this.hasError = true
+    this.errorMessage = error.message
+    console.error('Error occurred:', error)
+    // Send to error reporting service
+  },
+  retry() {
+    this.hasError = false
+    this.errorMessage = ''
+  }
+}"
+  x-init="
+  window.addEventListener('error', (event) => handleError(event.error))
+  window.addEventListener('unhandledrejection', (event) => handleError(event.reason))
+"
+>
+  <div x-show="hasError" class="error-boundary">
+    <h2>Something went wrong</h2>
+    <p x-text="errorMessage"></p>
+    <button @click="retry()">Try Again</button>
+  </div>
+
+  <div x-show="!hasError">
+    <!-- Your app content goes here -->
+    <slot></slot>
+  </div>
+</div>
+
+<style>
+  .error-boundary {
+    padding: 20px;
+    border: 2px solid #ff4444;
+    border-radius: 8px;
+    background-color: #ffe6e6;
+    color: #cc0000;
+    text-align: center;
+  }
+</style>

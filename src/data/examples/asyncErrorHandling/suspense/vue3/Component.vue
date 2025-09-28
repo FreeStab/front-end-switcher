@@ -1,0 +1,59 @@
+<template>
+  <Suspense>
+    <!-- Default slot: actual component -->
+    <template #default>
+      <AsyncDataComponent />
+    </template>
+
+    <!-- Fallback slot: loading state -->
+    <template #fallback>
+      <div class="loading-spinner">
+        <div class="spinner"></div>
+        <p>Loading data...</p>
+      </div>
+    </template>
+  </Suspense>
+</template>
+
+<script setup>
+import { Suspense } from "vue";
+import AsyncDataComponent from "./AsyncDataComponent.vue";
+</script>
+
+<style scoped>
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+}
+
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.data-list {
+  padding: 20px;
+}
+
+.item {
+  margin-bottom: 16px;
+  padding: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+}
+</style>

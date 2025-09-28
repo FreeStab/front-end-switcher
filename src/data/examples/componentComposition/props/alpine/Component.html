@@ -1,0 +1,29 @@
+<!-- Parent Component -->
+<div
+  x-data="{
+  pageTitle: 'Hello World',
+  counter: 42,
+  isActive: true
+}"
+>
+  <!-- Child Component -->
+  <div x-data="childComponent($data)">
+    <h1 x-text="title"></h1>
+    <p x-text="'Count: ' + count"></p>
+    <p x-text="'Status: ' + (isActive ? 'Active' : 'Inactive')"></p>
+  </div>
+</div>
+
+<script>
+  function childComponent({
+    pageTitle: title,
+    counter: count = 0,
+    isActive = false,
+  }) {
+    return {
+      title,
+      count,
+      isActive,
+    };
+  }
+</script>

@@ -1,0 +1,15 @@
+<button {{on "click" this.fetchData}} disabled={{this.loading}}>
+  {{#if this.loading}}
+    Loading...
+  {{else}}
+    Fetch Data
+  {{/if}}
+</button>
+
+{{#if this.error}}
+  <div class="error">{{this.error}}</div>
+{{/if}}
+
+{{#if this.data}}
+  <div>{{this.data.message}}</div>
+{{/if}}

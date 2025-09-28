@@ -1,0 +1,30 @@
+<div>
+  <h3>Single Select</h3>
+  <label for="country">Country:</label>
+  <select id="country" {{on "change" this.updateCountry}}>
+    <option value="">Select a country</option>
+    {{#each this.countries as |country|}}
+      <option
+        value={{country.code}}
+        selected={{eq this.selectedCountry country.code}}
+      >
+        {{country.name}}
+      </option>
+    {{/each}}
+  </select>
+  <p>Selected: {{this.selectedCountry}}</p>
+
+  <h3>Multiple Select</h3>
+  <label for="skills">Skills:</label>
+  <select id="skills" {{on "change" this.updateSkills}} multiple>
+    {{#each this.skills as |skill|}}
+      <option
+        value={{skill.id}}
+        selected={{includes this.selectedSkills skill.id}}
+      >
+        {{skill.name}}
+      </option>
+    {{/each}}
+  </select>
+  <p>Selected: {{join ", " this.selectedSkills}}</p>
+</div>

@@ -1,0 +1,46 @@
+<div
+  x-data="{
+  selectedLanguage: 'javascript',
+  selectedLevel: 'intermediate',
+  languages: [
+    { id: 'javascript', label: 'JavaScript' },
+    { id: 'typescript', label: 'TypeScript' },
+    { id: 'python', label: 'Python' },
+    { id: 'rust', label: 'Rust' }
+  ],
+  experienceLevels: [
+    { id: 'beginner', label: 'Beginner' },
+    { id: 'intermediate', label: 'Intermediate' },
+    { id: 'advanced', label: 'Advanced' },
+    { id: 'expert', label: 'Expert' }
+  ]
+}"
+>
+  <h3>Programming Language</h3>
+  <template x-for="language in languages" :key="language.id">
+    <label>
+      <input
+        x-model="selectedLanguage"
+        :value="language.id"
+        type="radio"
+        name="language"
+      />
+      <span x-text="language.label"></span>
+    </label>
+  </template>
+  <p>Selected: <span x-text="selectedLanguage"></span></p>
+
+  <h3>Experience Level</h3>
+  <template x-for="level in experienceLevels" :key="level.id">
+    <label>
+      <input
+        x-model="selectedLevel"
+        :value="level.id"
+        type="radio"
+        name="experience"
+      />
+      <span x-text="level.label"></span>
+    </label>
+  </template>
+  <p>Experience: <span x-text="selectedLevel"></span></p>
+</div>

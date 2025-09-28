@@ -1,0 +1,14 @@
+<!-- Child Component -->
+<div x-data="childComponent()">
+  <button @click="$parent.handleIncrement()">+</button>
+  <button @click="$parent.handleDecrement()">-</button>
+</div>
+
+<script>
+  function childComponent() {
+    return {
+      // Child component logic
+      // Access parent methods via $parent
+    };
+  }
+</script>

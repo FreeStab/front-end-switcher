@@ -1,0 +1,28 @@
+<div
+  x-data="{
+  isChecked: false,
+  selectedOptions: [],
+  options: [
+    { id: 'javascript', label: 'JavaScript' },
+    { id: 'typescript', label: 'TypeScript' },
+    { id: 'vue', label: 'Vue.js' },
+    { id: 'react', label: 'React' }
+  ]
+}"
+>
+  <h3>Single Checkbox</h3>
+  <label>
+    <input x-model="isChecked" type="checkbox" />
+    Accept terms and conditions
+  </label>
+  <p>Accepted: <span x-text="isChecked"></span></p>
+
+  <h3>Multiple Checkboxes</h3>
+  <template x-for="option in options" :key="option.id">
+    <label>
+      <input x-model="selectedOptions" :value="option.id" type="checkbox" />
+      <span x-text="option.label"></span>
+    </label>
+  </template>
+  <p>Selected: <span x-text="selectedOptions.join(', ')"></span></p>
+</div>

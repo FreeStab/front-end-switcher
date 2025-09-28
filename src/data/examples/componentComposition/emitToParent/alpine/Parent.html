@@ -1,0 +1,22 @@
+<!-- Parent Component -->
+<div
+  x-data="{
+  count: 0,
+  
+  handleIncrement() {
+    this.count++
+  },
+  
+  handleDecrement() {
+    this.count--
+  }
+}"
+>
+  <p>Count: <span x-text="count"></span></p>
+
+  <!-- Include Child Component -->
+  <div x-data="childComponent()">
+    <button @click="$parent.handleIncrement()">+</button>
+    <button @click="$parent.handleDecrement()">-</button>
+  </div>
+</div>

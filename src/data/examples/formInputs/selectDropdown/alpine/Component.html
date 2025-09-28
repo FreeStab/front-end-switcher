@@ -1,0 +1,39 @@
+<div
+  x-data="{
+  selectedCountry: '',
+  selectedSkills: [],
+  countries: [
+    { code: 'us', name: 'United States' },
+    { code: 'ca', name: 'Canada' },
+    { code: 'uk', name: 'United Kingdom' },
+    { code: 'fr', name: 'France' },
+    { code: 'de', name: 'Germany' }
+  ],
+  skills: [
+    { id: 'js', name: 'JavaScript' },
+    { id: 'ts', name: 'TypeScript' },
+    { id: 'vue', name: 'Vue.js' },
+    { id: 'react', name: 'React' },
+    { id: 'node', name: 'Node.js' }
+  ]
+}"
+>
+  <h3>Single Select</h3>
+  <label for="country">Country:</label>
+  <select id="country" x-model="selectedCountry">
+    <option value="">Select a country</option>
+    <template x-for="country in countries" :key="country.code">
+      <option :value="country.code" x-text="country.name"></option>
+    </template>
+  </select>
+  <p>Selected: <span x-text="selectedCountry"></span></p>
+
+  <h3>Multiple Select</h3>
+  <label for="skills">Skills:</label>
+  <select id="skills" x-model="selectedSkills" multiple>
+    <template x-for="skill in skills" :key="skill.id">
+      <option :value="skill.id" x-text="skill.name"></option>
+    </template>
+  </select>
+  <p>Selected: <span x-text="selectedSkills.join(', ')"></span></p>
+</div>

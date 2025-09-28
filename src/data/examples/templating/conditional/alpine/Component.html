@@ -1,0 +1,17 @@
+<div x-data="{ isVisible: true, count: 3 }">
+  <button @click="isVisible = !isVisible; count++">Toggle</button>
+
+  <p x-show="isVisible">This is visible!</p>
+  <p x-show="!isVisible">This is hidden!</p>
+
+  <div x-show="isVisible">
+    <h3>Conditional Content</h3>
+    <p x-show="count > 5">
+      Count is greater than 5: <span x-text="count"></span>
+    </p>
+    <p x-show="count > 0 && count <= 5">
+      Count is between 1 and 5: <span x-text="count"></span>
+    </p>
+    <p x-show="count <= 0">Count is 0 or negative</p>
+  </div>
+</div>
